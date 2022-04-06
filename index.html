@@ -18,24 +18,44 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="The effective manager journey! ">
+  <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="ReYo">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="apple-mobile-web-app-title" content="trainer">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <title>ReYo</title>
+  <title>trainer</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    var serviceWorkerVersion = '2064986086';
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<!-- IMPORTANT: load pdfjs files -->
+<script
+        src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.js"
+        type="text/javascript"
+></script>
+<script type="text/javascript">
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.worker.min.js";
+pdfRenderOptions = {
+  // where cmaps are downloaded from
+  cMapUrl: "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/cmaps/",
+  // The cmaps are compressed in the case
+  cMapPacked: true,
+  // any other options for pdfjsLib.getDocument.
+  // params: {}
+};
+// To workaround the recent breaking change on Flutter Web, you can set workaround_for_flutter_93615 to true:
+//window.workaround_for_flutter_93615 = true;
+</script>
+<script>
+    var serviceWorkerVersion = '2156309786';
     var scriptLoaded = false;
+
     function loadMainDartJs() {
       if (scriptLoaded) {
         return;
