@@ -37,9 +37,9 @@ p {
   margin: .5rem 0;
 }
 
-img {
+/*img {
   width: 100%;
-}
+}*/
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Staatliches', cursive;
@@ -275,7 +275,9 @@ h1, h2, h3, h4, h5, h6 {
 #article .meta .category {
   margin-top: 0.4rem;
 }
-
+.section-maring-top{
+  border-top: 2px solid #faf089;
+}
 /* Footer */
 #main-footer {
   background: #002366;
